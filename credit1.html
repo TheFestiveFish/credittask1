@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue 3 Examples</title>
+    </head>
+
+    <body>
+      <div id="ifelseapp">
+        <p v-if="vif">This is a v-if statement</p>
+        <p v-else>This is a v-else statement</p>
+        <button @click="toggleMessage">Toggle Message</button>
+      </div>
+
+      <script src="https://unpkg.com/vue@3.2.19/dist/vue.global.min.js"></script>
+      <script>
+        const app = Vue.createApp({
+          data() {
+            return {
+              showMessage: false
+            }
+          },
+          methods: {
+            toggleMessage() {
+              this.showMessage = !this.showMessage;
+            }
+          }
+        });
+
+        app.mount('#ifelseapp');
+      </script>
+      
+      <h1 v-show="ok">This is a v-show statement</h1>
+
+      <span>This can support a multiline message:</span>
+      <p></p>
+      <textarea v-model="message" placeholder="multi line text box"></textarea>
+    
+    </body>
+</html>
